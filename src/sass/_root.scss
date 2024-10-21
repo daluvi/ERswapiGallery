@@ -1,0 +1,238 @@
+@use 'sass:color';
+@import 'utils';
+
+:root{
+  // --navigation-btn-col: var(--color-second);
+  --navigation-btn-col-bg: var(--color-second);
+  --navigation-btn-col-b: var(--color-second);
+
+  --navigation-select-col-bg: var(--color-tenth);
+  --navigation-select-col-b: var(--color-second);
+  --navigation-select-col: var(--color-second);
+  
+  --card-col-b: var(--color-second);
+  --card-col-bg_front: var(--color-ninth);
+  --card-col-bg_back: var(--color-tenth);
+  --card-col_back: var(--color-eighth);
+  --card_col_btn-close: var(--color-eighth);
+  --card_col-bg_btn-close: var(--color-thirteenth);
+  --card_col-b_btn-close: var(--color-fourteenth);
+  
+  --body-col-bg: var(--color-first);
+  
+  --nav-link-col: var(--color-third);
+  --nav-link-col-b: var(--color-second);
+  
+  --nav-link-col_act: var(--color-second);
+  --nav-link-col_hov: var(--color-second);
+  --nav-link-col-bg_act: var(--color-fourth);
+  --nav-link-col-bg_hov: var(--color-fourth);
+  --nav-link-col-b_act: var(--color-fifth);
+  --nav-link-col-b_hov: var(--color-fifth);
+  --nav-link-col-b_dis: var(--color-sixth);
+  --nav-link-col_dis: var(--color-seventh);
+
+  --head-fourth-col: var(--color-eighth);
+  --head-sixth-col: var(--color-eleventh);
+  --head-sixth-col-sdw: var(--color-tenth);
+  --paragraph-col: var(--color-twelfth);
+  --paragraph-col-sdw: var(--color-tenth);
+  
+  --loading-col-bg_wrapper: var(--color-fifteenth);
+}
+
+$root: (
+  '[theme:default]': (
+    color: (
+      first: black,
+      second: color.mix(#00a86b, #dddddd),
+      third: color.mix(#00a86b, #ffffff),
+      fourth: color.mix(#00a86b, #777777),
+      fifth: color.mix(#00a86b, #bbbbbb),
+      sixth: color.mix(#00a86b, #feeeef),
+      seventh:color.mix(#00a86b, #feeeee),
+      eighth: color.mix(#00a86b, #ffffff),
+      ninth: color.mix(#00a86b, #ffffff),
+      tenth: color.mix(#00a86b, #333333),
+      eleventh:  color.mix(color.complement(#00a86b), #111),
+      twelfth:color.mix(color.complement(#00a86b), #333),
+      thirteenth: color.mix(#00a86b, #666666),
+      fourteenth: color.adjust(color.mix(#00a86b,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    ),
+  ),
+  '[theme:blue]': (
+    color: (
+      first: black,
+      second: color.mix(#0000ff, #dddddd),
+      third: color.mix(#0000ff, #ffffff),
+      fourth: color.mix(#0000ff, #777777),
+      fifth: color.mix(#0000ff, #bbbbbb),
+      sixth: color.mix(#0000ff, #feeeef),
+      seventh:color.mix(#0000ff, #feeeee),
+      eighth: color.mix(#0000ff, #ffffff),
+      ninth: color.mix(#0000ff, #ffffff),
+      tenth: color.mix(#0000ff, #333333),
+      eleventh:  color.mix(color.invert(#0000ff), #111),
+      twelfth:color.mix(color.invert(#0000ff), #333),
+      thirteenth: color.mix(#0000ff, #666666),
+      fourteenth: color.adjust(color.mix(#0000ff,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:red]': (
+    color: (
+      first: black,
+      second: color.mix(#ff1400, #dddddd),
+      third: color.mix(#ff1400, #ffffff),
+      fourth: color.mix(#ff1400, #777777),
+      fifth: color.mix(#ff1400, #bbbbbb),
+      sixth: color.mix(#ff1400, #feeeef),
+      seventh:color.mix(#ff1400, #feeeee),
+      eighth: color.mix(#ff1400, #ffffff),
+      ninth: color.mix(#ff1400, #ffffff),
+      tenth: color.mix(#ff1400, #333333),
+      eleventh:  color.mix(color.invert(#ff1400), #111),
+      twelfth:color.mix(color.invert(#ff1400), #333),
+      thirteenth: color.mix(#ff1400, #666666),
+      fourteenth: color.adjust(color.mix(#ff1400,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:yellow]': (
+    color: (
+      first: black,
+      second: color.mix(#EFFD5F, #dddddd),
+      third: color.mix(#EFFD5F, #ffffff),
+      fourth: color.mix(#EFFD5F, #777777),
+      fifth: color.mix(#EFFD5F, #bbbbbb),
+      sixth: color.mix(#EFFD5F, #feeeef),
+      seventh:color.mix(#EFFD5F, #feeeee),
+      eighth: color.mix(#EFFD5F, #ffffff),
+      ninth: color.mix(#EFFD5F, #ffffff),
+      tenth: color.mix(#EFFD5F, #333333),
+      eleventh:  color.mix(color.invert(#EFFD5F), #111),
+      twelfth:color.mix(color.invert(#EFFD5F), #333),
+      thirteenth: color.mix(#EFFD5F, #666666),
+      fourteenth: color.adjust(color.mix(#EFFD5F,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:orange]': (
+    color: (
+      first: black,
+      second: color.mix(#ffbf34, #dddddd),
+      third: color.mix(#ffbf34, #ffffff),
+      fourth: color.mix(#ffbf34, #777777),
+      fifth: color.mix(#ffbf34, #bbbbbb),
+      sixth: color.mix(#ffbf34, #feeeef),
+      seventh:color.mix(#ffbf34, #feeeee),
+      eighth: color.mix(#ffbf34, #ffffff),
+      ninth: color.mix(#ffbf34, #ffffff),
+      tenth: color.mix(#ffbf34, #333333),
+      eleventh:  color.mix(color.invert(#ffbf34), #111),
+      twelfth:color.mix(color.invert(#ffbf34), #333),
+      thirteenth: color.mix(#ffbf34, #666666),
+      fourteenth: color.adjust(color.mix(#ffbf34,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:golden]': (
+    color: (
+      first: black,
+      second: color.mix(#FFD700, #dddddd),
+      third: color.mix(#FFD700, #ffffff),
+      fourth: color.mix(#FFD700, #777777),
+      fifth: color.mix(#FFD700, #bbbbbb),
+      sixth: color.mix(#FFD700, #feeeef),
+      seventh:color.mix(#FFD700, #feeeee),
+      eighth: color.mix(#FFD700, #ffffff),
+      ninth: color.mix(#FFD700, #ffffff),
+      tenth: color.mix(#FFD700, #333333),
+      eleventh:  color.mix(color.invert(#FFD700), #111),
+      twelfth:color.mix(color.invert(#FFD700), #333),
+      thirteenth: color.mix(#FFD700, #666666),
+      fourteenth: color.adjust(color.mix(#FFD700,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:silvery]': (
+    color: (
+      first: black,
+      second: color.mix(#e3e4e5, #dddddd),
+      third: color.mix(#e3e4e5, #ffffff),
+      fourth: color.mix(#e3e4e5, #777777),
+      fifth: color.mix(#e3e4e5, #bbbbbb),
+      sixth: color.mix(#e3e4e5, #feeeef),
+      seventh:color.mix(#e3e4e5, #feeeee),
+      eighth: color.mix(#e3e4e5, #ffffff),
+      ninth: color.mix(#e3e4e5, #ffffff),
+      tenth: color.mix(#e3e4e5, #333333),
+      eleventh:  color.mix(color.invert(#e3e4e5), #111),
+      twelfth:color.mix(color.invert(#e3e4e5), #333),
+      thirteenth: color.mix(#e3e4e5, #666666),
+      fourteenth: color.adjust(color.mix(#e3e4e5,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:white]': (
+    color: (
+      first: black,
+      second: color.mix(#F9FEFF, #dddddd),
+      third: color.mix(#F9FEFF, #ffffff),
+      fourth: color.mix(#F9FEFF, #777777),
+      fifth: color.mix(#F9FEFF, #bbbbbb),
+      sixth: color.mix(#F9FEFF, #feeeef),
+      seventh:color.mix(#F9FEFF, #feeeee),
+      eighth: color.mix(#F9FEFF, #ffffff),
+      ninth: color.mix(#F9FEFF, #ffffff),
+      tenth: color.mix(#F9FEFF, #ffffff),
+      eleventh:  color.mix(color.invert(#F9FEFF), #111),
+      twelfth:color.mix(color.invert(#F9FEFF), #333),
+      thirteenth: color.mix(#F9FEFF, #666666),
+      fourteenth: color.adjust(color.mix(#F9FEFF,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:purplish]': (
+    color: (
+      first: black,
+      second: color.mix(#4B0082, #dddddd),
+      third: color.mix(#4B0082, #ffffff),
+      fourth: color.mix(#4B0082, #777777),
+      fifth: color.mix(#4B0082, #bbbbbb),
+      sixth: color.mix(#4B0082, #feeeef),
+      seventh:color.mix(#4B0082, #feeeee),
+      eighth: color.mix(#4B0082, #ffffff),
+      ninth: color.mix(#4B0082, #ffffff),
+      tenth: color.mix(#4B0082, #333333),
+      eleventh:  color.mix(color.invert(#4B0082), #111),
+      twelfth:color.mix(color.invert(#4B0082), #333),
+      thirteenth: color.mix(#4B0082, #666666),
+      fourteenth: color.adjust(color.mix(#4B0082,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+  '[theme:black]': (
+    color: (
+      first: black,
+      second: color.mix(#151922, #dddddd),
+      third: color.mix(#151922, #ffffff),
+      fourth: color.mix(#151922, #777777),
+      fifth: color.mix(#151922, #bbbbbb),
+      sixth: color.mix(#151922, #feeeef),
+      seventh:color.mix(#151922, #feeeee),
+      eighth: color.mix(#151922, #ffffff),
+      ninth: color.mix(#151922, #ffffff),
+      tenth: color.mix(#151922, #333333),
+      eleventh:  color.mix(color.invert(#151922), #111),
+      twelfth:color.mix(color.invert(#151922), #333),
+      thirteenth: color.mix(#151922, #666666),
+      fourteenth: color.adjust(color.mix(#151922,#666666), $red: -81, $green: 5, $blue: 36),
+      fifteenth: color.change(black, $alpha: 80%),
+    )
+  ),
+);
+
+@include create-roots($root);
+

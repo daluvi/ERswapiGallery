@@ -45,25 +45,21 @@ table {
 article { 
 	display: grid;
 	width: 100%;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto auto auto auto;
 	gap: 20px;
 	justify-content: center;
 }
 section {
 	display: flex;
+	justify-content: center;
+	
 }
-
+figure {max-width: 100%;}
+figure img {max-width: 100%; height: fit-content;}
 figcaption {
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
-}
-
-.detail {
-
-}
-
-.card {
-
+	padding: 3%;
 }
 
