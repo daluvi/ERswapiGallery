@@ -64,7 +64,7 @@ const CardVehicles = ({id, item}: CV.Props) => {
                 <h6>capacidad de pasajeros: </h6><p>{item.passengers}</p>
               </div>
               <div className="feature">
-                <h6>clase de vehiculo: </h6><p>{item.vehicle_class}</p>
+                <h6>clase de vehículo: </h6><p>{item.vehicle_class}</p>
               </div>
             </div>
             <Films info={item.films} />

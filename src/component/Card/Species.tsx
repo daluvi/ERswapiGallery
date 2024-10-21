@@ -56,10 +56,10 @@ const CardSpecies = ({id, item}: CS.Props) => {
                 <h6>promedio tiempo de vida: </h6><p>{item.average_lifespan}</p>
               </div>
               <div className="feature">
-                <h6>clasificacion: </h6><p>{item.classification}</p>
+                <h6>clasificación: </h6><p>{item.classification}</p>
               </div>
               <div className="feature">
-                <h6>designacion: </h6><p>{item.designation}</p>
+                <h6>designación: </h6><p>{item.designation}</p>
               </div>
               <div className="feature">
                 <h6>lenguaje: </h6><p>{item.language}</p>
