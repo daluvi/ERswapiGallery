@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://daluvi.github.io/ERswapiGallery",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html --public-url 'https://daluvi.github.io/ERswapiGallery' && printf 'pagina de Swapi gallery\n' > dist/README.md",
     "clean": "rm -rf ./dist",
     "lint": "eslint",
     "lint-fix": "eslint --fix"

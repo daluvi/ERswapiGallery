@@ -2,7 +2,28 @@
 @import '../sass/reset';
 @import '../sass/root';
 
-.card {
+article { 
+	display: grid;
+	width: 100%;
+	grid-template-columns: auto auto auto auto;
+	gap: 20px;
+	justify-content: center;
+}
+section {
+	display: flex;
+	justify-content: center;
+	
+}
+figure {max-width: 100%;}
+figure img {max-width: 100%; height: fit-content;}
+figcaption {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 3%;
+}
+
+.card, .card-home {
 	border: 1px solid var(--card-col-b);
 	box-shadow: 0px 0px 7px var(--card-col-b);
 }

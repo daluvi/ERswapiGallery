@@ -51,11 +51,11 @@ declare namespace InfoExtra {
 }
 
 declare namespace Footer {
-  type Props = {data: {count: number, next: string | null, previous: string | null}};
+  type Props = {data?: {count: number, next: string | null, previous: string | null}};
 }
 
 declare namespace Header {
-  type Props = {data: {count: number, next: string | null, previous: string | null}};
+  type Props = {data?: {count: number, next: string | null, previous: string | null}};
   type OnChangeTheme = (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 

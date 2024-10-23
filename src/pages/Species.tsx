@@ -23,6 +23,7 @@ const Species = () => {
   };
   
   useEffect(() => {
+    window.scrollTo(0, 0);
     paginate(id);
   }, [id]);
   

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Pagination from "./Pagination";
+import {hasValue} from "../utils/util";
 
 import {Header as H} from "../@type/component/components";
 
@@ -31,7 +32,7 @@ const Header = ({data}: H.Props) => {
           <option value="black">saber black</option>
         </select>
       </div>
-      <Pagination data={data} />
+      {hasValue(data) && (<Pagination data={data} />)}
     </header>
   );
 };
