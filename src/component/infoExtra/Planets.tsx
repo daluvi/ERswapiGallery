@@ -7,14 +7,14 @@ import {getId, isResPlanets} from "../../utils/util";
 import {InfoExtra as IE} from "../../@type/component/components";
 import {ResultPlanets} from "../../@type/service/service";
 
-const Planets = ({info}: IE.Props ) => {
+const Planets = ({info, title = 'Planeta de origen'}: IE.Props ) => {
   
   const onErrorImg: IE.OnErrorImg = (e) => {
     e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
   };
   
   return isArray(info) && isResPlanets(info) && (
-    <div className="list-feature homeworld"><h6>Planeta de origen: </h6>
+    <div className="list-feature homeworld"><h6>{title}: </h6>
       {info.map((planet: ResultPlanets) => {
         const id = getId(planet.url);
         return (

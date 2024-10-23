@@ -7,12 +7,12 @@ import {getId, isResVehicles} from "../../utils/util";
 import {InfoExtra as IE} from "../../@type/component/components";
 import {ResultVehicles} from "../../@type/service/service";
 
-const Vehicles = ({info}: IE.Props ) => {
+const Vehicles = ({info, title = 'Vehículos'}: IE.Props ) => {
   const onErrorImg: IE.OnErrorImg = (e) => {
     e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
   };
   return isArray(info) && isResVehicles(info) && (
-    <div className="list-feature vehicles"><h6>Vehículos: </h6>
+    <div className="list-feature vehicles"><h6>{title}: </h6>
       {info.map((vehicle: ResultVehicles) => {
         const id = getId(vehicle.url);
         return (  

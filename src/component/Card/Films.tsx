@@ -59,7 +59,7 @@ const CardFilms = ({id, item}: CF.Props) => {
               </div>
             </div>
             <Characters info={item.characters} title='Personajes'/>
-            <Planets info={item.planets} />
+            <Planets info={item.planets} title='Planetas'/>
             <Species info={item.species} />
             <Starships info={item.starships} />
             <Vehicles info={item.vehicles} />

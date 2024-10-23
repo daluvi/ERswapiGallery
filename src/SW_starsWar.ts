@@ -1,7 +1,7 @@
 import {REGEX_MATCH_URL} from "./utils/constants";
 
 const CACHE_NAME = "starsWarCache";
-const PRE_CACHED_RESOURCES = ["/", "./static/styles.scss", "/offline"];
+const PRE_CACHED_RESOURCES = ["/"];
 
 self.addEventListener("install", (event: ExtendableEvent) => {  
   async function preCacheResources() {

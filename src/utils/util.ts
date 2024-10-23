@@ -83,6 +83,8 @@ export const isUrlSpecies = (x: string) => !!x.match(/\/api\/species\//);
 export const isUrlStarShips = (x: string) => !!x.match(/\/api\/starships\//);
 export const isUrlVehicles = (x: string) => !!x.match(/\/api\/vehicles\//);
 
+export const getUrlPath = (x: string) => x.match(/\/(films|people|species|starships|planets|vehicles)?\/?/)[1];
+
 export const getId: U.GetId = (url) => parseInt(url?.replace(/\D/g, ''), 10);
 
 export const removeActiveClass = () => {
@@ -92,8 +94,8 @@ export const removeActiveClass = () => {
 };
 
 export const addActiveClass: U.AddActiveClass = (index) => {
-  const headerLinks = document.querySelectorAll("header nav a:not(.prevBtn):not(.nextBtn)");
-  const footerLinks = document.querySelectorAll("footer nav a:not(.prevBtn):not(.nextBtn)");
+  const headerLinks = document.querySelectorAll("header nav.paginationNav a:not(.prevBtn):not(.nextBtn)");
+  const footerLinks = document.querySelectorAll("footer nav.paginationNav a:not(.prevBtn):not(.nextBtn)");
   
   if (headerLinks.length > 0 && footerLinks.length > 0) {
     removeActiveClass();

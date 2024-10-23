@@ -7,12 +7,12 @@ import {getId, isResStarships} from "../../utils/util";
 import {InfoExtra as IE} from "../../@type/component/components";
 import {ResultStarships} from "../../@type/service/service";
 
-const Starships = ({info}: IE.Props ) => {
+const Starships = ({info, title = 'Naves estelares'}: IE.Props ) => {
   const onErrorImg: IE.OnErrorImg = (e) => {
     e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
   };
   return isArray(info) && isResStarships(info) && (
-    <div className="list-feature films"><h6>Naves estelares: </h6>
+    <div className="list-feature films"><h6>{title}: </h6>
         {info.map((starship: ResultStarships) => {
           const id = getId(starship.url);
           return (

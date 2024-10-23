@@ -17,7 +17,7 @@ const Pagination = ({data}: P.Props) => {
     addActiveClass(parseInt(id, 10) -1);
   }, [id]);
   return (
-    !!quantityPage && <nav>
+    !!quantityPage && <nav className="paginationNav">
       <div className="first">
         {!!previous && <Link to={previous} className="prevBtn">Anterior</Link>}
       </div>

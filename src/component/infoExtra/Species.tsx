@@ -7,14 +7,14 @@ import {getId, isResSpecies} from "../../utils/util";
 import {InfoExtra as IE} from "../../@type/component/components";
 import {ResultSpecies} from "../../@type/service/service";
 
-const Species = ({info}: IE.Props ) => {
+const Species = ({info, title = 'Especies'}: IE.Props ) => {
   
   const onErrorImg: IE.OnErrorImg = (e) => {
     e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
   };
   
   return isArray(info) && isResSpecies(info) && (
-    <div className="list-feature starships"><h6>Especies: </h6>
+    <div className="list-feature starships"><h6>{title}: </h6>
       {info.map((specie: ResultSpecies) => {
         const id = getId(specie.url);
         return (
