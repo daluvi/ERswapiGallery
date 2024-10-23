@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ import Species from "./pages/Species";
 import Starships from "./pages/StarShips";
 import Vehicles from "./pages/Vehicles";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/people/:id",
     element: <Characters />,
