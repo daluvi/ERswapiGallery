@@ -1,73 +1,37 @@
 import React from "react";
 
 import {BASE_URL_IMG} from "../../utils/constants";
-import {getId} from "../../utils/util";
-import Characters from "../infoExtra/Characters";
-import Films from "../infoExtra/Films";
-import Planets from "../infoExtra/Planets";
+import {closeFlip, getId, onErrorImg, openFlip} from "../../utils/util";
+import InfoExtraCharacters from "../infoExtra/Characters";
+import InfoExtraFilms from "../infoExtra/Films";
+import InfoExtraPlanets from "../infoExtra/Planets";
 
-import {CardSpecies as CS} from '../../@type/component/components';
+import {CardSpecies} from '../../@type/component/components';
+import Feature from "../Feature";
 
-const CardSpecies = ({id, item}: CS.Props) => {
-  const openFlip: CS.OpenFlip = (e) => {
-    e.preventDefault();
-
-    const allFlipElements = document.querySelectorAll(`.flip-card .inner`);
-    const currentElement = document.querySelector(`#${id} .flip-card .inner`);
-    
-    allFlipElements.forEach((item) => {
-      item?.classList.remove('flip');
-    });
-    currentElement?.classList.add('flip');
-  };
-  const closeFlip: CS.CloseFlip = (e) => {
-    e.preventDefault();
-
-    const currentElement = document.querySelector(`#${id} .flip-card .inner`);
-
-    currentElement?.classList.remove('flip');
-  };
-  const onErrorImg: CS.OnErrorImg = (e) => {
-    e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
-  };
+const Species = ({id, item}: CardSpecies.Props) => {
   const id_species = getId(item.url);
 
   return (
     <section id={id} className="card">
       <figure className="flip-card">
         <div className="inner">
-          <div className="front" onClick={(e) => { openFlip(e); }}><img src={`${BASE_URL_IMG}/planets/${id_species}.jpg`} alt="1" height="auto" width="auto" onError={onErrorImg} /></div>
+          <div className="front" onClick={(e) => { openFlip(e, id); }}><img src={`${BASE_URL_IMG}/planets/${id_species}.jpg`} alt="1" height="auto" width="auto" onError={onErrorImg} /></div>
           <div className="back">
-            <button type="button" onClick={(e) => { closeFlip(e); }}>x</button>
+            <button type="button" onClick={(e) => { closeFlip(e, id); }}>x</button>
             <div className="info">
-              <div className="feature">
-                <h6>colores de ojos: </h6><p>{item.eye_colors} hs</p>
-              </div>
-              <div className="feature">
-                <h6>colores de pelo: </h6><p>{item.hair_colors} días</p>
-              </div>
-              <div className="feature">
-                <h6>colores de piel: </h6><p>{item.skin_colors} días</p>
-              </div>
-              <div className="feature">
-                <h6>promedio altura: </h6><p>{item.average_height}</p>
-              </div>
-              <div className="feature">
-                <h6>promedio tiempo de vida: </h6><p>{item.average_lifespan}</p>
-              </div>
-              <div className="feature">
-                <h6>clasificación: </h6><p>{item.classification}</p>
-              </div>
-              <div className="feature">
-                <h6>designación: </h6><p>{item.designation}</p>
-              </div>
-              <div className="feature">
-                <h6>lenguaje: </h6><p>{item.language}</p>
-              </div>
+              <Feature title="Eyes Colors" value={`${item.eye_colors}`} />
+              <Feature title="Hair Colors" value={`${item.hair_colors}`} />
+              <Feature title="Skins Colors" value={`${item.skin_colors}`} />
+              <Feature title="Rate Height" value={`${item.average_height}`} />
+              <Feature title="Rate Life" value={`${item.average_lifespan}`} />
+              <Feature title="Classification" value={`${item.classification}`} />
+              <Feature title="Designation" value={`${item.designation}`} />
+              <Feature title="Languages" value={`${item.language}`} />
             </div>
-            <Planets info={item.homeworld} />
-            <Films info={item.films} />
-            <Characters info={item.people} title='Personas'/>
+            <InfoExtraPlanets info={item.homeworld} />
+            <InfoExtraFilms info={item.films} />
+            <InfoExtraCharacters info={item.people} title='Personas'/>
           </div>
         </div>
         <figcaption><h4>Nombre: {item.name}</h4></figcaption>
@@ -76,4 +40,4 @@ const CardSpecies = ({id, item}: CS.Props) => {
   );
 };
 
-export default CardSpecies;
+export default Species;

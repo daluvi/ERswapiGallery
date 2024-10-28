@@ -1,77 +1,37 @@
 import React from "react";
 
 import {BASE_URL_IMG} from "../../utils/constants";
-import {getId} from "../../utils/util";
-import Characters from "../infoExtra/Characters";
-import Films from "../infoExtra/Films";
+import {closeFlip, getId, onErrorImg, openFlip} from "../../utils/util";
+import InfoExtraCharacters from "../infoExtra/Characters";
+import InfoExtraFilms from "../infoExtra/Films";
 
-import {CardStarships as CS} from '../../@type/component/components';
+import {CardStarships} from '../../@type/component/components';
+import Feature from "../Feature";
 
-const CardStarships = ({id, item}: CS.Props) => {
-  const openFlip: CS.OpenFlip = (e) => {
-    e.preventDefault();
-
-    const allFlipElements = document.querySelectorAll(`.flip-card .inner`);
-    const currentElement = document.querySelector(`#${id} .flip-card .inner`);
-    
-    allFlipElements.forEach((item) => {
-      item?.classList.remove('flip');
-    });
-    currentElement?.classList.add('flip');
-  };
-  const closeFlip: CS.CloseFlip = (e) => {
-    e.preventDefault();
-
-    const currentElement = document.querySelector(`#${id} .flip-card .inner`);
-
-    currentElement?.classList.remove('flip');
-  };
-  const onErrorImg: CS.OnErrorImg = (e) => {
-    e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
-  };
+const Starships = ({id, item}: CardStarships.Props) => {
   const id_character = getId(item.url);
 
   return (
     <section id={id} className="card">
       <figure className="flip-card">
         <div className="inner">
-          <div className="front" onClick={(e) => { openFlip(e); }}><img src={`${BASE_URL_IMG}/starships/${id_character}.jpg`} alt="1" height="auto" width="auto" onError={onErrorImg} /></div>
+          <div className="front" onClick={(e) => { openFlip(e, id); }}><img src={`${BASE_URL_IMG}/starships/${id_character}.jpg`} alt="1" height="auto" width="auto" onError={onErrorImg} /></div>
           <div className="back">
-            <button type="button" onClick={(e) => { closeFlip(e); }}>x</button>
+            <button type="button" onClick={(e) => { closeFlip(e, id); }}>x</button>
             <div className="info">
-              <div className="feature">
-                <h6>modelo: </h6><p>{item.model}</p>
-              </div>
-              <div className="feature">
-                <h6>capacidad de carga: </h6><p>{item.cargo_capacity}</p>
-              </div>
-              <div className="feature">
-                <h6>consumibles: </h6><p>{item.consumables} días</p>
-              </div>
-              <div className="feature">
-                <h6>calificación de hiperimpulsor: </h6><p>{item.hyperdrive_rating}</p>
-              </div>
-              <div className="feature">
-                <h6>largo: </h6><p>{item.length}</p>
-              </div>
-              <div className="feature">
-                <h6>costo en crédito: </h6><p>{item.cost_in_credits}</p>
-              </div>
-              <div className="feature">
-                <h6>manufacturado: </h6><p>{item.manufacturer}</p>
-              </div>
-              <div className="feature">
-                <h6>Velocidad atmosférica máxima: </h6><p>{item.max_atmosphering_speed}</p>
-              </div>
-              <div className="feature">
-                <h6>capacidad de pasajeros: </h6><p>{item.passengers}</p>
-              </div>
-              <div className="feature">
-                <h6>clase de nave estelar: </h6><p>{item.starship_class}</p>
-              </div>
+              <Feature title="Model" value={`${item.model}`} />
+              <Feature title="Cargo Capacity" value={`${item.cargo_capacity}`} />
+              <Feature title="Consumable" value={`${item.consumables}`} />
+              <Feature title="Hyperdrive Rating" value={`${item.hyperdrive_rating}`} />
+              <Feature title="Length" value={`${item.length}`} />
+              <Feature title="Cost In Credits" value={`${item.cost_in_credits}`} />
+              <Feature title="Manufacturer" value={`${item.manufacturer}`} />
+              <Feature title="Max Atmosphering Speed" value={`${item.max_atmosphering_speed}`} />
+              <Feature title="Passengers" value={`${item.passengers}`} />
+              <Feature title="Starships Class" value={`${item.starship_class}`} />
             </div>
-            <Films info={item.films} />
-            <Characters info={item.pilots} title='Pilotos'/>
+            <InfoExtraFilms info={item.films} />
+            <InfoExtraCharacters info={item.pilots} title='Pilotos'/>
           </div>
         </div>
         <figcaption><h4>Nombre: {item.name}</h4></figcaption>
@@ -80,4 +40,4 @@ const CardStarships = ({id, item}: CS.Props) => {
   );
 };
 
-export default CardStarships;
+export default Starships;

@@ -1,72 +1,40 @@
 import React from "react";
 
 import {BASE_URL_IMG} from "../../utils/constants";
-import {getId} from "../../utils/util";
-import Films from "../infoExtra/Films";
-import Planets from "../infoExtra/Planets";
-import Starships from "../infoExtra/Starships";
-import Vehicles from "../infoExtra/Vehicles";
+import {closeFlip, getId, onErrorImg, openFlip} from "../../utils/util";
+import InfoExtraFilms from "../infoExtra/Films";
+import InfoExtraPlanets from "../infoExtra/Planets";
+import InfoExtraStarships from "../infoExtra/Starships";
+import InfoExtraVehicles from "../infoExtra/Vehicles";
 
-import {CardCharacter as CC} from '../../@type/component/components';
+import {CardCharacter} from '../../@type/component/components';
+import Feature from "../Feature";
 
-const CardCharacter = ({id, item}: CC.Props) => {
-  const openFlip: CC.OpenFlip = (e) => {
-    e.preventDefault();
-
-    const allFlipElements = document.querySelectorAll(`.flip-card .inner`);
-    const currentElement = document.querySelector(`#${id} .flip-card .inner`);
-    
-    allFlipElements.forEach((item) => {
-      item?.classList.remove('flip');
-    });
-    currentElement?.classList.add('flip');
-  };
-  const closeFlip: CC.CloseFlip = (e) => {
-    e.preventDefault();
-
-    const currentElement = document.querySelector(`#${id} .flip-card .inner`);
-
-    currentElement?.classList.remove('flip');
-  };
-  const onErrorImg: CC.OnErrorImg = (e) => {
-    e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
-  };
+const Character = ({id, item}: CardCharacter.Props) => {
+  
   const id_character = getId(item.url);
 
   return (
     <section id={id} className="card">
       <figure className="flip-card">
         <div className="inner">
-          <div className="front" onClick={(e) => { openFlip(e); }}><img src={`${BASE_URL_IMG}/characters/${id_character}.jpg`} alt="1" height="auto" width="auto" onError={onErrorImg} /></div>
+          <div className="front" onClick={(e) => { openFlip(e, id); }}><img src={`${BASE_URL_IMG}/characters/${id_character}.jpg`} alt="1" height="auto" width="auto" onError={onErrorImg} /></div>
           <div className="back">
-            <button type="button" onClick={(e) => { closeFlip(e); }}>x</button>
+            <button type="button" onClick={(e) => { closeFlip(e, id); }}>x</button>
             <div className="info">
-              <div className="feature">
-                <h6>A&ntilde;o de nacimiento: </h6><p>{item.birth_year}</p>
-              </div>
-              <div className="feature">
-                <h6>G&eacute;nero: </h6><p>{item.gender}</p>
-              </div>
-              <div className="feature">
-                <h6>Color de ojos: </h6><p>{item.eye_color}</p>
-              </div>
-              <div className="feature">
-                <h6>Color de pelo: </h6><p>{item.hair_color}</p>
-              </div>
-              <div className="feature">
-                <h6>Altura: </h6><p>{item.height}</p>
-              </div>
-              <div className="feature">
-                <h6>Peso: </h6><p>{item.mass}</p>
-              </div>
-              <div className="feature">
-                <h6>Color de piel: </h6><p>{item.skin_color}</p>
-              </div>
+              <Feature title="Birth Year" value={item.birth_year} />
+              <Feature title="Gender" value={item.gender} />
+              <Feature title="Eye Color" value={item.eye_color} />
+              <Feature title="Hair Color" value={item.hair_color} />
+              <Feature title="Height" value={item.height} />
+              <Feature title="Weight" value={item.mass} />
+              <Feature title="Skin Colors" value={item.skin_color} />
+
             </div>
-            <Planets info={item.homeworld} />
-            <Films info={item.films} />
-            <Starships info={item.starships} />
-            <Vehicles info={item.vehicles} />
+            <InfoExtraPlanets info={item.homeworld} />
+            <InfoExtraFilms info={item.films} />
+            <InfoExtraStarships info={item.starships} />
+            <InfoExtraVehicles info={item.vehicles} />
           </div>
         </div>
         <figcaption><h4>Name: {item.name}</h4></figcaption>
@@ -75,4 +43,4 @@ const CardCharacter = ({id, item}: CC.Props) => {
   );
 };
 
-export default CardCharacter;
+export default Character;

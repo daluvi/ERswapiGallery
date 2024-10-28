@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 
 import {BASE_URL} from "../utils/constants";
-import {useAppSelector} from "../store/hooks";
 import {useParams} from 'react-router-dom';
 import CardCharacter from '../component/Card/Character';
 import Footer from "../component/Footer";
@@ -14,8 +13,7 @@ import {StarWars_Response_people} from "../@type/service/service";
 
 const Characters = () => {
   const {id} = useParams();
-  const {getInfo, count, next, previous} = useGettingInfo();
-  const {info} = useAppSelector((state) => state.data);
+  const {getInfo, count, next, previous, info} = useGettingInfo();
   const data = {count, next, previous};
 
   const paginate: Paginate = (id) => {

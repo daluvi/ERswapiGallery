@@ -3,22 +3,14 @@ import {Link, useLocation} from "react-router-dom";
 import {isUndefined} from "underscore";
 
 import Pagination from "./Pagination";
-import {getUrlPath, hasValue} from "../utils/util";
+import {changeOpenNavigation, getUrlPath, hasValue, onChangeTheme} from "../utils/util";
 
 import {Header as H} from "../@type/component/components";
 
 const Header = ({data}: H.Props) => {
   const location = useLocation();
   const currentPath = getUrlPath(location.pathname);
-  const changeOpenNavigation = () => {
-    document.querySelector('.openNav').classList.toggle('open');
-    document.querySelector('.navigation').classList.toggle('open');
-  };
-
-  const onChangeTheme: H.OnChangeTheme = (e) => {
-    e.preventDefault();
-    document.getElementsByTagName('html')[0].setAttribute('theme', e.target.value);
-  };
+  
   return (
     <header>
       <button type="button" className="openNav" onClick={() => changeOpenNavigation()} ><span className="icon-hamburger"></span></button>

@@ -14,6 +14,7 @@ import {
   ResultStarships, 
   ResultVehicles
 } from "../@type/service/service";
+import {BASE_URL_IMG} from "./constants";
 
 import {Utils as U} from "../@type/utils/utils";
 
@@ -118,4 +119,36 @@ export const getIndexOfActiveInPagination: U.GetIndexOfActiveInPagination = () =
     index = v.classList.contains('active') ? i : index;
   });
   return index;
+};
+
+export const changeOpenNavigation = () => {
+  document.querySelector('.openNav').classList.toggle('open');
+  document.querySelector('.navigation').classList.toggle('open');
+};
+
+export const onChangeTheme: U.OnChangeTheme = (e) => {
+  e.preventDefault();
+  document.getElementsByTagName('html')[0].setAttribute('theme', e.target.value);
+};
+
+export const openFlip: U.OpenFlip = (e, id) => {
+  e.preventDefault();
+
+  const allFlipElements = document.querySelectorAll(`.flip-card .inner`);
+  const currentElement = document.querySelector(`#${id} .flip-card .inner`);
+  
+  allFlipElements.forEach((item) => {
+    item?.classList.remove('flip');
+  });
+  currentElement?.classList.add('flip');
+};
+export const closeFlip: U.CloseFlip = (e, id) => {
+  e.preventDefault();
+
+  const currentElement = document.querySelector(`#${id} .flip-card .inner`);
+
+  currentElement?.classList.remove('flip');
+};
+export const onErrorImg: U.OnErrorImg = (e) => {
+  e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
 };

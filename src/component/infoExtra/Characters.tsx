@@ -2,15 +2,12 @@ import React from "react";
 import {isArray} from "underscore";
 
 import {BASE_URL_IMG} from "../../utils/constants";
-import {getId, isResCharacter} from "../../utils/util";
+import {getId, isResCharacter, onErrorImg} from "../../utils/util";
 
 import {InfoExtra as IE} from "../../@type/component/components";
 import {ResultCharacter} from "../../@type/service/service";
 
 const Characters = ({info, title}: IE.Props ) => {
-  const onErrorImg: IE.OnErrorImg = (e) => {
-    e.currentTarget.src = `${BASE_URL_IMG}/placeholder.jpg`;
-  };
   return isArray(info) && isResCharacter(info) && (
     <div className="list-feature homeworld"><h6>{title}: </h6>
       {info.map((character: ResultCharacter) => {
