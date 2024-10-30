@@ -1,0 +1,275 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --header-home-bg: var(--color-second);
+  --header-home-b: var(--color-sixteenth);
+  --navigation-btn-col-bg: var(--color-second);
+  --navigation-btn-col-b: var(--color-second);
+  --navigation-select-col-bg: var(--color-tenth);
+  --navigation-select-col-b: var(--color-second);
+  --navigation-select-col: var(--color-sixteenth);
+  --card-col-b: var(--color-second);
+  --card-col-bg_front: var(--color-ninth);
+  --card-col-bg_back: var(--color-tenth);
+  --card-col_back: var(--color-eighth);
+  --card_col_btn-close: var(--color-eighth);
+  --card_col-bg_btn-close: var(--color-thirteenth);
+  --card_col-b_btn-close: var(--color-fourteenth);
+  --body-col-bg: var(--color-first);
+  --nav-link-col: var(--color-sixteenth);
+  --nav-link-col-b: var(--color-second);
+  --nav-link-col_act: var(--color-sixteenth);
+  --nav-link-col_hov: var(--color-sixteenth);
+  --nav-link-col-bg_act: var(--color-fourth);
+  --nav-link-col-bg_hov: var(--color-fourth);
+  --nav-link-col-b_act: var(--color-fifth);
+  --nav-link-col-b_hov: var(--color-fifth);
+  --nav-link-col-b_dis: var(--color-sixth);
+  --nav-link-col_dis: var(--color-seventh);
+  --head-fourth-col: var(--color-sixteenth);
+  --head-sixth-col: var(--color-eleventh);
+  --head-sixth-col-sdw: var(--color-tenth);
+  --paragraph-col: var(--color-twelfth);
+  --paragraph-col-sdw: var(--color-tenth);
+  --loading-col-bg_wrapper: var(--color-fifteenth);
+}
+
+:root {
+  --color-first: black;
+  --color-second: rgb(110.5, 194.5, 164);
+  --color-third: rgb(127.5, 211.5, 181);
+  --color-fourth: rgb(59.5, 143.5, 113);
+  --color-fifth: rgb(93.5, 177.5, 147);
+  --color-sixth: #7fcbad;
+  --color-seventh: rgb(127, 203, 172.5);
+  --color-eighth: rgb(127.5, 211.5, 181);
+  --color-ninth: rgb(127.5, 211.5, 181);
+  --color-tenth: rgb(25.5, 109.5, 79);
+  --color-eleventh: rgb(92.5, 8.5, 39);
+  --color-twelfth: rgb(109.5, 25.5, 56);
+  --color-thirteenth: rgb(51, 135, 104.5);
+  --color-fourteenth: rgb(0, 140, 140.5);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #a90561;
+}
+
+:root[theme=blue] {
+  --color-first: black;
+  --color-second: rgb(110.5, 110.5, 238);
+  --color-third: rgb(127.5, 127.5, 255);
+  --color-fourth: rgb(59.5, 59.5, 187);
+  --color-fifth: rgb(93.5, 93.5, 221);
+  --color-sixth: #7f77f7;
+  --color-seventh: rgb(127, 119, 246.5);
+  --color-eighth: rgb(127.5, 127.5, 255);
+  --color-ninth: rgb(127.5, 127.5, 255);
+  --color-tenth: rgb(25.5, 25.5, 153);
+  --color-eleventh: rgb(136, 136, 8.5);
+  --color-twelfth: rgb(153, 153, 25.5);
+  --color-thirteenth: rgb(51, 51, 178.5);
+  --color-fourteenth: rgb(0, 56, 214.5);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #aeff24;
+}
+
+:root[theme=red] {
+  --color-first: black;
+  --color-second: rgb(238, 120.5, 110.5);
+  --color-third: rgb(255, 137.5, 127.5);
+  --color-fourth: rgb(187, 69.5, 59.5);
+  --color-fifth: rgb(221, 103.5, 93.5);
+  --color-sixth: rgb(254.5, 129, 119.5);
+  --color-seventh: rgb(254.5, 129, 119);
+  --color-eighth: rgb(255, 137.5, 127.5);
+  --color-ninth: rgb(255, 137.5, 127.5);
+  --color-tenth: rgb(153, 35.5, 25.5);
+  --color-eleventh: rgb(8.5, 126, 136);
+  --color-twelfth: rgb(25.5, 143, 153);
+  --color-thirteenth: rgb(178.5, 61, 51);
+  --color-fourteenth: rgb(97.5, 66, 87);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #00f0ff;
+}
+
+:root[theme=yellow] {
+  --color-first: black;
+  --color-second: #e6ed9e;
+  --color-third: #f7feaf;
+  --color-fourth: #b3ba6b;
+  --color-fifth: #d5dc8d;
+  --color-sixth: rgb(246.5, 245.5, 167);
+  --color-seventh: rgb(246.5, 245.5, 166.5);
+  --color-eighth: #f7feaf;
+  --color-ninth: #f7feaf;
+  --color-tenth: #919849;
+  --color-eleventh: rgb(16.5, 9.5, 88.5);
+  --color-twelfth: rgb(33.5, 26.5, 105.5);
+  --color-thirteenth: rgb(170.5, 177.5, 98.5);
+  --color-fourteenth: rgb(89.5, 182.5, 134.5);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #1c64ff;
+}
+
+:root[theme=orange] {
+  --color-first: black;
+  --color-second: rgb(238, 206, 136.5);
+  --color-third: rgb(255, 223, 153.5);
+  --color-fourth: rgb(187, 155, 85.5);
+  --color-fifth: rgb(221, 189, 119.5);
+  --color-sixth: rgb(254.5, 214.5, 145.5);
+  --color-seventh: rgb(254.5, 214.5, 145);
+  --color-eighth: rgb(255, 223, 153.5);
+  --color-ninth: rgb(255, 223, 153.5);
+  --color-tenth: rgb(153, 121, 51.5);
+  --color-eleventh: rgb(8.5, 40.5, 110);
+  --color-twelfth: rgb(25.5, 57.5, 127);
+  --color-thirteenth: rgb(178.5, 146.5, 77);
+  --color-fourteenth: rgb(97.5, 151.5, 113);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #3442ff;
+}
+
+:root[theme=golden] {
+  --color-first: black;
+  --color-second: rgb(238, 218, 110.5);
+  --color-third: rgb(255, 235, 127.5);
+  --color-fourth: rgb(187, 167, 59.5);
+  --color-fifth: rgb(221, 201, 93.5);
+  --color-sixth: rgb(254.5, 226.5, 119.5);
+  --color-seventh: rgb(254.5, 226.5, 119);
+  --color-eighth: rgb(255, 235, 127.5);
+  --color-ninth: rgb(255, 235, 127.5);
+  --color-tenth: rgb(153, 133, 25.5);
+  --color-eleventh: rgb(8.5, 28.5, 136);
+  --color-twelfth: rgb(25.5, 45.5, 153);
+  --color-thirteenth: rgb(178.5, 158.5, 51);
+  --color-fourteenth: rgb(97.5, 163.5, 87);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #002dff;
+}
+
+:root[theme=silvery] {
+  --color-first: black;
+  --color-second: rgb(224, 224.5, 225);
+  --color-third: rgb(241, 241.5, 242);
+  --color-fourth: rgb(173, 173.5, 174);
+  --color-fifth: rgb(207, 207.5, 208);
+  --color-sixth: rgb(240.5, 233, 234);
+  --color-seventh: rgb(240.5, 233, 233.5);
+  --color-eighth: rgb(241, 241.5, 242);
+  --color-ninth: rgb(241, 241.5, 242);
+  --color-tenth: rgb(139, 139.5, 140);
+  --color-eleventh: rgb(22.5, 22, 21.5);
+  --color-twelfth: rgb(39.5, 39, 38.5);
+  --color-thirteenth: rgb(164.5, 165, 165.5);
+  --color-fourteenth: rgb(83.5, 170, 201.5);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #94e9ff;
+}
+
+:root[theme=white] {
+  --color-first: black;
+  --color-second: rgb(235, 237.5, 238);
+  --color-third: rgb(252, 254.5, 255);
+  --color-fourth: rgb(184, 186.5, 187);
+  --color-fifth: rgb(218, 220.5, 221);
+  --color-sixth: rgb(251.5, 246, 247);
+  --color-seventh: rgb(251.5, 246, 246.5);
+  --color-eighth: rgb(252, 254.5, 255);
+  --color-ninth: rgb(252, 254.5, 255);
+  --color-tenth: rgb(252, 254.5, 255);
+  --color-eleventh: rgb(11.5, 9, 8.5);
+  --color-twelfth: rgb(28.5, 26, 25.5);
+  --color-thirteenth: rgb(175.5, 178, 178.5);
+  --color-fourteenth: rgb(94.5, 183, 214.5);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #888888;
+}
+
+:root[theme=purplish] {
+  --color-first: black;
+  --color-second: rgb(148, 110.5, 175.5);
+  --color-third: rgb(165, 127.5, 192.5);
+  --color-fourth: rgb(97, 59.5, 124.5);
+  --color-fifth: rgb(131, 93.5, 158.5);
+  --color-sixth: rgb(164.5, 119, 184.5);
+  --color-seventh: rgb(164.5, 119, 184);
+  --color-eighth: rgb(165, 127.5, 192.5);
+  --color-ninth: rgb(165, 127.5, 192.5);
+  --color-tenth: rgb(63, 25.5, 90.5);
+  --color-eleventh: rgb(98.5, 136, 71);
+  --color-twelfth: rgb(115.5, 153, 88);
+  --color-thirteenth: rgb(88.5, 51, 116);
+  --color-fourteenth: rgb(7.5, 56, 152);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #378724;
+}
+
+:root[theme=black] {
+  --color-first: black;
+  --color-second: rgb(121, 123, 127.5);
+  --color-third: rgb(138, 140, 144.5);
+  --color-fourth: rgb(70, 72, 76.5);
+  --color-fifth: rgb(104, 106, 110.5);
+  --color-sixth: rgb(137.5, 131.5, 136.5);
+  --color-seventh: rgb(137.5, 131.5, 136);
+  --color-eighth: rgb(138, 140, 144.5);
+  --color-ninth: rgb(138, 140, 144.5);
+  --color-tenth: rgb(36, 38, 42.5);
+  --color-eleventh: rgb(125.5, 123.5, 119);
+  --color-twelfth: rgb(142.5, 140.5, 136);
+  --color-thirteenth: rgb(61.5, 63.5, 68);
+  --color-fourteenth: rgb(0, 68.5, 104);
+  --color-fifteenth: rgba(0, 0, 0, 0.8);
+  --color-sixteenth: #009b9d;
+}
+
+/*# sourceMappingURL=/main.f3bfba75.css.map */
