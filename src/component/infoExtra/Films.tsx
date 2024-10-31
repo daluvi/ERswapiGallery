@@ -1,11 +1,11 @@
 import React from "react";
 import {isArray} from "underscore";
 
-import {BASE_URL_IMG} from "../../utils/constants";
-import {getId, isResFilms} from "../../utils/util";
+import {BASE_URL_IMG} from "@utils/constants";
+import {getId, isResFilms} from "@utils/util";
 
-import {InfoExtra as IE} from "../../@type/component/components";
-import {ResultFilms} from "../../@type/service/service";
+import {InfoExtra as IE} from "@typings/components";
+import {ResultFilms} from "@typings/service";
 
 const Films = ({info}: IE.Props ) => {
   const onErrorImg: IE.OnErrorImg = (e) => {

@@ -1,11 +1,11 @@
 import React from "react";
 import {isArray} from "underscore";
 
-import {BASE_URL_IMG} from "../../utils/constants";
-import {getId, isResCharacter, onErrorImg} from "../../utils/util";
+import {BASE_URL_IMG} from "@utils/constants";
+import {getId, isResCharacter, onErrorImg} from "@utils/util";
 
-import {InfoExtra as IE} from "../../@type/component/components";
-import {ResultCharacter} from "../../@type/service/service";
+import {InfoExtra as IE} from "@typings/components";
+import {ResultCharacter} from "@typings/service";
 
 const Characters = ({info, title}: IE.Props ) => {
   return isArray(info) && isResCharacter(info) && (

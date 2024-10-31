@@ -1,11 +1,11 @@
 import React from "react";
 import {isArray} from "underscore";
 
-import {BASE_URL_IMG} from "../../utils/constants";
-import {getId, isResVehicles} from "../../utils/util";
+import {BASE_URL_IMG} from "@utils/constants";
+import {getId, isResVehicles} from "@utils/util";
 
-import {InfoExtra as IE} from "../../@type/component/components";
-import {ResultVehicles} from "../../@type/service/service";
+import {InfoExtra as IE} from "@typings/components";
+import {ResultVehicles} from "@typings/service";
 
 const Vehicles = ({info, title = 'Vehículos'}: IE.Props ) => {
   const onErrorImg: IE.OnErrorImg = (e) => {

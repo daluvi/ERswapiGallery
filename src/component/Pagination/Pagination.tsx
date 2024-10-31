@@ -1,10 +1,12 @@
 import React, {useEffect} from "react";
 import {Link, useLocation, useParams} from "react-router-dom";
 
-import {addActiveClass} from "../utils/util";
-import {MAX_RESULT_PER_PAGE} from "../utils/constants";
+import {addActiveClass} from "@utils/util";
+import {MAX_RESULT_PER_PAGE} from "@utils/constants";
 
-import {Pagination as P} from '../@type/component/components';
+import {Pagination as P} from '@typings/components';
+
+import './Pagination.scss';
 
 const Pagination = ({data}: P.Props) => {
   const location = useLocation();
@@ -19,7 +21,7 @@ const Pagination = ({data}: P.Props) => {
   return (
     !!quantityPage && <nav className="paginationNav">
       <div className="first">
-        {!!previous && <Link to={previous} className="prevBtn">Anterior</Link>}
+        {!!previous && <Link to={`${location.pathname.replace(/\d/, (parseInt(id, 10) - 1).toString() )}`} className="prevBtn">Anterior</Link>}
       </div>
       <div className="middle">
         {
@@ -29,7 +31,7 @@ const Pagination = ({data}: P.Props) => {
         }
       </div>
       <div className="last">
-        {!!next && <Link to={next} className="nextBtn">Siguiente</Link>}
+        {!!next && <Link to={`${location.pathname.replace(/\d/, (parseInt(id, 10) + 1).toString() )}`} className="nextBtn">Siguiente</Link>}
       </div>
     </nav>
   );

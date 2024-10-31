@@ -1,16 +1,18 @@
 import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
 
-import {BASE_URL} from "../utils/constants";
-import CardSpecies from '../component/Card/Species';
-import Footer from "../component/Footer";
-import Header from "../component/Header";
-import useGettingInfo from "../hooks/useGettingInfo";
+import {BASE_URL} from "@utils/constants";
+import {CardSpecies} from '@component/Card';
+import Footer from "@component/Footer";
+import Header from "@component/Header";
+import useGettingInfo from "@hooks/useGettingInfo";
 
-import {Paginate} from "../@type/app";
-import {StarWars_Response_people} from "../@type/service/service";
+import {Paginate} from "@typings/app";
+import {StarWars_Response_people} from "@typings/service";
 
-import {Data as D} from "../@type/store/reducers";
+import {Data as D} from "@typings/reducers";
+
+import './Pages.scss';
 
 const Species = () => {
   const {id} = useParams();
@@ -31,7 +33,7 @@ const Species = () => {
     <>
       <Header data={data} />
       <article>
-        {info?.length > 0 && info?.map((item: D.SpeciesState, index) => {
+        {info?.length > 0 && info?.map((item: D.SpeciesState, index: number) => {
           return (<CardSpecies key={item.name} item={item} id={`Card${index}`}/>);
         })}
       </article>

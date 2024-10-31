@@ -2,7 +2,7 @@ import {
   createSlice, 
   PayloadAction
 } from "@reduxjs/toolkit";
-import {Data as D} from "../../@type/store/reducers";
+import {Data as D} from "@typings/reducers";
 
 const initialState: D.InitialState = {
   count: 0,

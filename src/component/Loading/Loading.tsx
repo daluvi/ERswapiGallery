@@ -1,5 +1,6 @@
 import React from "react";
-import {useAppSelector} from "../store/hooks";
+import {useAppSelector} from "@store/hooks";
+import './Loading.scss';
 
 const Loading = () => {
   const {isLoading} = useAppSelector((state) => state.data);        

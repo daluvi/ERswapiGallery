@@ -10,6 +10,18 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "paths": {
+      // "@/*": ["./src/*"],
+      "@typings/*": ["./src/typings/*"],
+      "@component/*": ["./src/component/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@static/*": ["./src/static/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@store/*": ["./src/store/*"],
+      "@service/*": ["./src/service/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@sass/*": ["./src/sass/*"],
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts"]

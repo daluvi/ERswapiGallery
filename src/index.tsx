@@ -2,9 +2,9 @@ import {createRoot} from 'react-dom/client';
 import {Provider} from 'react-redux';
 import React from "react";
 
-import "./utils/animationStar";
+import "@utils/animationStar";
 import App from "./app";
-import store from './store';
+import store from '@store/index';
 
 const container = document.getElementById('app');
 

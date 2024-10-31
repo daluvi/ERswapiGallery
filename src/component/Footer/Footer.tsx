@@ -1,9 +1,9 @@
 import React from "react";
 
-import Pagination from "./Pagination";
-import {hasValue} from "../utils/util";
+import Pagination from "@component/Pagination/Pagination";
+import {hasValue} from "@utils/util";
 
-import {Footer as F} from "../@type/component/components";
+import {Footer as F} from "@typings/components";
 
 const Footer = ({data}: F.Props) => {
   return (

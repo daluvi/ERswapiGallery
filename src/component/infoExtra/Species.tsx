@@ -1,11 +1,11 @@
 import React from "react";
 import {isArray} from "underscore";
 
-import {BASE_URL_IMG} from "../../utils/constants";
-import {getId, isResSpecies} from "../../utils/util";
+import {BASE_URL_IMG} from "@utils/constants";
+import {getId, isResSpecies} from "@utils/util";
 
-import {InfoExtra as IE} from "../../@type/component/components";
-import {ResultSpecies} from "../../@type/service/service";
+import {InfoExtra as IE} from "@typings/components";
+import {ResultSpecies} from "@typings/service";
 
 const Species = ({info, title = 'Especies'}: IE.Props ) => {
   

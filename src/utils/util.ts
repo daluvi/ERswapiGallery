@@ -13,10 +13,10 @@ import {
   ResultSpecies, 
   ResultStarships, 
   ResultVehicles
-} from "../@type/service/service";
-import {BASE_URL_IMG} from "./constants";
+} from "@typings/service";
+import {BASE_URL_IMG} from "@utils/constants";
 
-import {Utils as U} from "../@type/utils/utils";
+import {Utils as U} from "@typings/utils";
 
 export function isResCharacter(item: ResultGroup | ResultGroup[]): item is ResultCharacter | ResultCharacter[] {
   return isArray(item) 

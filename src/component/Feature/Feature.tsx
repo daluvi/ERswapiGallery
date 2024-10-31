@@ -1,5 +1,5 @@
 import React from "react";
-import {Feature as F} from "../@type/component/components";
+import {Feature as F} from "@typings/components";
 const Feature = ({title, value, long}: F.Props) => {
   return (
     <div className={`feature ${long? 'long': ''}`}>

@@ -1,7 +1,7 @@
 import React from "react";
-import {BASE_URL_IMG} from "../utils/constants";
-import Footer from "../component/Footer";
-import Header from "../component/Header";
+import {BASE_URL_IMG} from "@utils/constants";
+import Footer from "@component/Footer";
+import Header from "@component/Header";
 import {Link} from "react-router-dom";
 
 const Home = () => {

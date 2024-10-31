@@ -5,7 +5,7 @@ import {
   ResultSpecies_processed,
   ResultStarships_processed,
   ResultVehicles_processed,
-} from "../service/service";
+} from "../service";
 
 declare namespace Data {
   type CharacterState = ResultCharacter_processed & {id?: number};

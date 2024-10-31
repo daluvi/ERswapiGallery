@@ -1,11 +1,11 @@
 import React from "react";
 import {isArray} from "underscore";
 
-import {BASE_URL_IMG} from "../../utils/constants";
-import {getId, isResPlanets} from "../../utils/util";
+import {BASE_URL_IMG} from "@utils/constants";
+import {getId, isResPlanets} from "@utils/util";
 
-import {InfoExtra as IE} from "../../@type/component/components";
-import {ResultPlanets} from "../../@type/service/service";
+import {InfoExtra as IE} from "@typings/components";
+import {ResultPlanets} from "@typings/service";
 
 const Planets = ({info, title = 'Planeta de origen'}: IE.Props ) => {
   

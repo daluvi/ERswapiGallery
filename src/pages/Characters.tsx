@@ -1,15 +1,17 @@
 import React, {useEffect} from "react";
-
-import {BASE_URL} from "../utils/constants";
 import {useParams} from 'react-router-dom';
-import CardCharacter from '../component/Card/Character';
-import Footer from "../component/Footer";
-import Header from "../component/Header";
-import useGettingInfo from "../hooks/useGettingInfo";
 
-import {Data as D} from "../@type/store/reducers";
-import {Paginate} from "../@type/app";
-import {StarWars_Response_people} from "../@type/service/service";
+import {BASE_URL} from "@utils/constants";
+import Header from "@component/Header";
+import {CardCharacter} from "@component/Card";
+import Footer from "@component/Footer";
+import useGettingInfo from "@hooks/useGettingInfo";
+
+import {Data as D} from "@typings/reducers";
+import {Paginate} from "@typings/app";
+import {StarWars_Response_people} from "@typings/service";
+
+import './Pages.scss';
 
 const Characters = () => {
   const {id} = useParams();
@@ -29,7 +31,7 @@ const Characters = () => {
     <>
       <Header data={data} />
       <article>
-        {info?.length > 0 && info?.map((item: D.CharacterState, index) => 
+        {info?.length > 0 && info?.map((item: D.CharacterState, index: number) => 
           (<CardCharacter key={item.name} item={item} id={`Card${index}`}/>))
         }
       </article>

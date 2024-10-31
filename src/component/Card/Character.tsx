@@ -1,14 +1,18 @@
 import React from "react";
 
-import {BASE_URL_IMG} from "../../utils/constants";
-import {closeFlip, getId, onErrorImg, openFlip} from "../../utils/util";
-import InfoExtraFilms from "../infoExtra/Films";
-import InfoExtraPlanets from "../infoExtra/Planets";
-import InfoExtraStarships from "../infoExtra/Starships";
-import InfoExtraVehicles from "../infoExtra/Vehicles";
+import {BASE_URL_IMG} from "@utils/constants";
+import {closeFlip, getId, onErrorImg, openFlip} from "@utils/util";
+import {
+  InfoExtraFilms,
+  InfoExtraPlanets,
+  InfoExtraStarships,
+  InfoExtraVehicles
+} from "@component/infoExtra";
+import Feature from "@component/Feature";
 
-import {CardCharacter} from '../../@type/component/components';
-import Feature from "../Feature";
+import {CardCharacter} from '@typings/components';
+
+import './Card.scss';
 
 const Character = ({id, item}: CardCharacter.Props) => {
   

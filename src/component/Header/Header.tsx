@@ -2,10 +2,13 @@ import React from "react";
 import {Link, useLocation} from "react-router-dom";
 import {isUndefined} from "underscore";
 
-import Pagination from "./Pagination";
-import {changeOpenNavigation, getUrlPath, hasValue, onChangeTheme} from "../utils/util";
+import Pagination from "@component/Pagination";
+import {changeOpenNavigation, getUrlPath, hasValue, onChangeTheme} from "@utils/util";
 
-import {Header as H} from "../@type/component/components";
+import {Header as H} from "@typings/components";
+
+import starWarIcon from '@static/iconos/android-icon-36x36.png';
+import './Header.scss';
 
 const Header = ({data}: H.Props) => {
   const location = useLocation();
@@ -14,8 +17,9 @@ const Header = ({data}: H.Props) => {
   return (
     <header>
       <button type="button" className="openNav" onClick={() => changeOpenNavigation()} ><span className="icon-hamburger"></span></button>
+      <Link className="homeLink" to="/" ><img src={starWarIcon} alt="Home" /></Link>
       <div className="navigation">
-        <nav className={isUndefined(currentPath)? 'disabled': ''}>
+        <nav className={`pages ${isUndefined(currentPath)? 'disabled': ''}`}>
           <Link to="/people/1" className={currentPath === 'people'? 'disabled': ''}>People</Link>
           <Link to="/films/1" className={currentPath === 'films' ? 'disabled': ''}>Films</Link>
           <Link to="/species/1" className={currentPath === 'species' ? 'disabled': ''}>Species</Link>

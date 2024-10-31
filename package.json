@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html --open",
-    "build": "rm -rf dist && parcel build src/index.html --public-url 'https://daluvi.github.io/ERswapiGallery' && printf 'pagina de Swapi gallery\n' > dist/README.md",
+    "build": "rm -rf dist && parcel build src/index.html && printf 'pagina de Swapi gallery\n' > dist/README.md",
     "clean": "rm -rf ./dist",
     "lint": "eslint",
     "lint-fix": "eslint --fix"
@@ -41,5 +41,15 @@
     "react-router-dom": "^6.27.0",
     "underscore": "^1.13.7",
     "utils": "^0.3.1"
+  },
+  "alias": {
+    "@typings/*": "./src/typings/$1",
+    "@component/*": "./src/component/$1",
+    "@utils/*": "./src/utils/$1",
+    "@static/*": "./src/static/$1",
+    "@hooks/*": "./src/hooks/$1",
+    "@store/*": "./src/store/$1",
+    "@service/*": "./src/service/$1",
+    "@pages/*": "./src/pages/$1"
   }
 }

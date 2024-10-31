@@ -4,14 +4,16 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import Characters from "./pages/Characters";
-import Films from "./pages/Films";
-import Home from "./pages/Home";
-import Loading from "./component/Loading";
-import Planets from "./pages/Planets";
-import Species from "./pages/Species";
-import Starships from "./pages/StarShips";
-import Vehicles from "./pages/Vehicles";
+import Characters from "@pages/Characters";
+import Films from "@pages/Films";
+import Home from "@pages/Home";
+import Loading from "@component/Loading";
+import Planets from "@pages/Planets";
+import Species from "@pages/Species";
+import Starships from "@pages/StarShips";
+import Vehicles from "@pages/Vehicles";
+
+import './app.scss';
 
 const router = createBrowserRouter([
   {

@@ -13,17 +13,17 @@ import {
   isUrlSpecies, 
   isUrlStarShips, 
   isUrlVehicles 
-} from "../utils/util";
-import {gettingData} from "../service";
-import {useAppDispatch, useAppSelector} from "../store/hooks";
+} from "@utils/util";
+import {gettingData} from "@service/index";
+import {useAppDispatch, useAppSelector} from "@store/hooks";
 import { 
   clearInfo,
   saveDataPagination,
   saveInfo,
   setIsLoading,
-} from "../store/reducers/data";
+} from "@store/reducers/data";
 
-import {Data as D} from "../@type/store/reducers";
+import {Data as D} from "@typings/reducers";
 import { 
   ResponseGroup,
   ResultCharacter,
@@ -33,7 +33,7 @@ import {
   ResultSpecies,
   ResultStarships,
   ResultVehicles,
-} from "../@type/service/service";
+} from "@typings/service";
 
 
 const useGettingInfo = () => {

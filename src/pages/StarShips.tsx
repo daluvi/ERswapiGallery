@@ -1,15 +1,17 @@
 import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
 
-import {BASE_URL} from "../utils/constants";
-import CardStarships from '../component/Card/Starships';
-import Footer from "../component/Footer";
-import Header from "../component/Header";
-import useGettingInfo from "../hooks/useGettingInfo";
+import {BASE_URL} from "@utils/constants";
+import {CardStarships} from '@component/Card';
+import Footer from "@component/Footer";
+import Header from "@component/Header";
+import useGettingInfo from "@hooks/useGettingInfo";
 
-import {Data as D} from "../@type/store/reducers";
-import {Paginate} from "../@type/app";
-import {StarWars_Response_people} from "../@type/service/service";
+import {Data as D} from "@typings/reducers";
+import {Paginate} from "@typings/app";
+import {StarWars_Response_people} from "@typings/service";
+
+import './Pages.scss';
 
 const Starships = () => {
   const {id} = useParams();
@@ -30,7 +32,7 @@ const Starships = () => {
     <>
       <Header data={data} />
       <article>
-        {info?.length > 0 && info?.map((item: D.StarshipsState, index) => {
+        {info?.length > 0 && info?.map((item: D.StarshipsState, index: number) => {
           return (<CardStarships key={item.name} item={item} id={`Card${index}`}/>);
         })}
       </article>
