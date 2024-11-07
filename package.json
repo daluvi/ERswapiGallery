@@ -1,7 +1,7 @@
 {
   "name": "erswapigallery",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project to show a gallery of the information star war movie",
   "main": "index.js",
   "homepage": "https://daluvi.github.io/ERswapiGallery",
   "scripts": {
@@ -12,8 +12,8 @@
     "lint": "eslint",
     "lint-fix": "eslint --fix"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["SWAPI", "React", "Redux", "React-router", "Typescript", "PWA", "Sass"],
+  "author": "Daniel Luciano Villalba",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.11.1",
