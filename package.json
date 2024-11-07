@@ -12,7 +12,7 @@
     "lint": "eslint",
     "lint-fix": "eslint --fix"
   },
-  "keywords": ["SWAPI", "React", "Redux", "React-router", "Typescript", "PWA", "Sass"],
+  "keywords": ["SWAPI", "React", "Redux", "React-router", "Typescript", "PWA", "Sass", "Parcel"],
   "author": "Daniel Luciano Villalba",
   "license": "ISC",
   "devDependencies": {
