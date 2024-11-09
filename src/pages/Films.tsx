@@ -16,8 +16,6 @@ import './Pages.scss';
 const Films = () => {
   const {id} = useParams();
   const {getInfo, info, count, next, previous} = useGettingInfo();
-  const data = {count, next, previous};
-  
 
   const paginate: Paginate = (id) => {
     getInfo<StarWars_Response_people>(`${BASE_URL}/films/?page=${id}`);
@@ -30,13 +28,13 @@ const Films = () => {
   
   return (
     <>
-      <Header data={data} />
+      <Header data={{count, next, previous}} />
       <article>
         {info?.length > 0 && info?.map((item: D.FilmsState, index: number) => {
           return (<CardFilms key={item.title} item={item} id={`Card${index}`}/>);
         })}
       </article>
-      <Footer data={data} />
+      <Footer data={{count, next, previous}} />
       
     </>
   );

@@ -17,7 +17,6 @@ import './Pages.scss';
 const Species = () => {
   const {id} = useParams();
   const {getInfo, info, count, next, previous} = useGettingInfo();
-  const data = {count, next, previous};
   
 
   const paginate: Paginate = (id) => {
@@ -31,13 +30,13 @@ const Species = () => {
   
   return (
     <>
-      <Header data={data} />
+      <Header data={{count, next, previous}} />
       <article>
         {info?.length > 0 && info?.map((item: D.SpeciesState, index: number) => {
           return (<CardSpecies key={item.name} item={item} id={`Card${index}`}/>);
         })}
       </article>
-      <Footer data={data} />
+      <Footer data={{count, next, previous}} />
     </>
   );
 };
