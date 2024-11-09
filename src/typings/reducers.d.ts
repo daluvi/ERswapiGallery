@@ -5,7 +5,7 @@ import {
   ResultSpecies_processed,
   ResultStarships_processed,
   ResultVehicles_processed,
-} from "../service";
+} from "@typings/service";
 
 declare namespace Data {
   type CharacterState = ResultCharacter_processed & {id?: number};
@@ -18,7 +18,7 @@ declare namespace Data {
   type StateGroup = CharacterState | FilmsState | PlanetsState | SpeciesState | StarshipsState | VehiclesState;
 
   type InitialState = {
-    info:      StateGroup[],
+    info: StateGroup[],
     count: number,
     next: string | null,
     previous: string | null,
