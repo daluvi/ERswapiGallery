@@ -84,7 +84,11 @@ export const isUrlSpecies = (x: string) => !!x.match(/\/api\/species\//);
 export const isUrlStarShips = (x: string) => !!x.match(/\/api\/starships\//);
 export const isUrlVehicles = (x: string) => !!x.match(/\/api\/vehicles\//);
 
-export const getUrlPath = (x: string) => x.match(/\/(films|people|species|starships|planets|vehicles)?\/?/)[1];
+export const getUrlPath = (x: string) => {
+  const match = x.match(/\/(films|people|species|starships|planets|vehicles)?\/?/);
+  const valueOfMatched = !isNull(match)? match[1]: undefined;
+  return valueOfMatched;
+};
 
 export const getId: U.GetId = (url) => parseInt(url?.replace(/\D/g, ''), 10);
 
@@ -122,8 +126,8 @@ export const getIndexOfActiveInPagination: U.GetIndexOfActiveInPagination = () =
 };
 
 export const changeOpenNavigation = () => {
-  document.querySelector('.openNav').classList.toggle('open');
-  document.querySelector('.navigation').classList.toggle('open');
+  document.querySelector('.openNav')?.classList.toggle('open');
+  document.querySelector('.navigation')?.classList.toggle('open');
 };
 
 export const onChangeTheme: U.OnChangeTheme = (e) => {

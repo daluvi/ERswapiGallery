@@ -2,7 +2,6 @@ import {
   getId,
   hasValue,
   isResCharacter, 
-  isResFilms, 
   isResPlanets, 
   isResSpecies, 
   isResStarships, 
@@ -11,7 +10,6 @@ import {
   isUrlPeople, 
   isUrlPlanets, 
   isUrlSpecies, 
-  isUrlStarShips, 
   isUrlVehicles 
 } from "@utils/util";
 import {gettingData} from "@service/index";
@@ -35,7 +33,6 @@ import {
   ResultVehicles,
 } from "@typings/service";
 
-
 const useGettingInfo = () => {
   const dispatch = useAppDispatch();
   const {count, next, previous, info} = useAppSelector((state) => state.data);
@@ -52,7 +49,7 @@ const useGettingInfo = () => {
       data = await gettingData<ResultSpecies>(url);
     } else if (isUrlVehicles(url)) {
       data = await gettingData<ResultVehicles>(url);
-    } else if (isUrlStarShips(url)) {
+    } else {
       data = await gettingData<ResultStarships>(url);
     }
     return data;
@@ -113,7 +110,7 @@ const useGettingInfo = () => {
     return {...item, species, starships, vehicles, characters, planets} as unknown as ResultFilms;
   };
 
-  const processDetails = (data: ResultGroup[]) => Promise.all(
+  const processDetails = (data: ResultGroup[]): Promise<ResultGroup[]> => Promise.all(
     data.map(async item => {
       if (isResCharacter(item)) {
         return await processingToCharacters(item);
@@ -125,7 +122,7 @@ const useGettingInfo = () => {
         return await processingToStarships(item);
       } else if (isResPlanets(item)) {
         return await processingToPlanets(item);
-      } else if (isResFilms(item)) {
+      } else {
         return await processingToFilms(item);
       }
     })

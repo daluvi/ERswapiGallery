@@ -1,5 +1,5 @@
-import {ResultGroup} from "../service/service";
-import {Data as D} from "../store/reducers";
+import {ResultGroup} from "@typings/service";
+import {Data as D} from "@typings/reducers";
 declare namespace CardCharacter {
   type Props = {id: string, item: D.CharacterState};
 }
@@ -29,11 +29,11 @@ declare namespace Feature {
 }
 
 declare namespace Footer {
-  type Props = {data?: {count: number, next: string | null, previous: string | null}};
+  type Props = {data: {count: number, next: string | null, previous: string | null}};
 }
 
 declare namespace Header {
-  type Props = {data?: {count: number, next: string | null, previous: string | null}};
+  type Props = {data: {count: number, next: string | null, previous: string | null}};
   
 }
 

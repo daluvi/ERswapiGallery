@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
+import {isUndefined} from "underscore";
 
 import {BASE_URL} from "@utils/constants";
 import {CardStarships} from '@component/Card';
@@ -24,14 +25,14 @@ const Starships = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
-    paginate(id);
+    !isUndefined(id) && paginate(id);
   }, [id]);
   
   return (
     <>
       <Header data={{count, next, previous}} />
       <article>
-        {info?.length > 0 && info?.map((item: D.StarshipsState, index: number) => {
+        {info?.length > 0 && (info as D.StarshipsState[])?.map((item, index: number) => {
           return (<CardStarships key={item.name} item={item} id={`Card${index}`}/>);
         })}
       </article>
