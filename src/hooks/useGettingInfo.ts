@@ -2,6 +2,7 @@ import {
   getId,
   hasValue,
   isResCharacter, 
+  isResFilms, 
   isResPlanets, 
   isResSpecies, 
   isResStarships, 
@@ -122,8 +123,14 @@ const useGettingInfo = () => {
         return await processingToStarships(item);
       } else if (isResPlanets(item)) {
         return await processingToPlanets(item);
-      } else {
+      } else if (isResFilms(item)) {
         return await processingToFilms(item);
+      } else {
+        return {
+          created: '',
+          edited: '',
+          url: '',
+        };
       }
     })
   );

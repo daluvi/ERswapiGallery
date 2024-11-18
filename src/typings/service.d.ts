@@ -142,11 +142,15 @@ type StarWars_Response_vehicles_processed = StarWars_Response & {
   results: ResultVehicles_processed[]
 }
 
-type ResultGroup = ResultCharacter | ResultFilms | ResultPlanets | ResultSpecies | ResultStarships | ResultVehicles;
+type StarWars_Response_minimal = StarWars_Response & {
+  results: results_commonProperties[]
+}
+
+type ResultGroup = ResultCharacter | ResultFilms | ResultPlanets | ResultSpecies | ResultStarships | ResultVehicles | results_commonProperties;
 type ResultGroup_processed = ResultCharacter_processed | ResultFilms_processed | ResultPlanets_processed | ResultSpecies_processed | ResultStarships_processed | ResultVehicles_processed;
-type ResponseGroup = StarWars_Response_people | StarWars_Response_films | StarWars_Response_planets | StarWars_Response_species | StarWars_Response_starships | StarWars_Response_vehicles;
+type ResponseGroup = StarWars_Response_people | StarWars_Response_films | StarWars_Response_planets | StarWars_Response_species | StarWars_Response_starships | StarWars_Response_vehicles | StarWars_Response_minimal;
 type ResponseGroup_processed = StarWars_Response_people_processed | StarWars_Response_films_processed | StarWars_Response_planets_processed | StarWars_Response_species_processed | StarWars_Response_starships_processed | StarWars_Response_vehicles_processed;
-type GettingData = <TypoRes extends ResponseGroup | ResultGroup>(param: string) => Promise<TypoRes>;
+type GettingData = <TypoRes extends ResponseGroup | ResultGroup>(param: string, attempts?: number) => Promise<TypoRes>;
  
 export {
   StarWars_Response_people,

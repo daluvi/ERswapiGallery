@@ -33,7 +33,6 @@ const Character = ({id, item}: CardCharacter.Props) => {
               <Feature title="Height" value={item.height} />
               <Feature title="Weight" value={item.mass} />
               <Feature title="Skin Colors" value={item.skin_color} />
-
             </div>
             <InfoExtraPlanets info={item.homeworld} />
             <InfoExtraFilms info={item.films} />
